@@ -6,26 +6,14 @@
 # In: 965 582 023 8 695210
 # Out: [5, 8, 15, 20, 23]
 
-
-def sum_numbers(number_1: int) -> int:
-    """
-    Сумма цифр числа
-
-    На вход получает целое число
-    Параметры: целое число
-    Возвращает: сумму цифр числа
-    """
-    sum_num = 0
-    while number_1 != 0:
-        sum_num += number_1 % 10
-        number_1 //= 10
-    return sum_num
-
-
 def sort_sum_numbers(list_1: list) -> list:
     list_2 = []
     for i in list_1:
-        list_2.append(sum_numbers(i))
+        sum_num = 0
+        while i != 0:
+            sum_num += i % 10
+            i //= 10
+        list_2.append(sum_num)
     return sorted(list_2)
 
 
